@@ -1,11 +1,11 @@
 package com.javierrodriguez.hiskotlin.domain.entities
 
 import com.sun.istack.NotNull
-import org.hibernate.annotations.Columns
 import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
+@Table(name="patients")
 data class Patient (
         @Id
         @GeneratedValue
