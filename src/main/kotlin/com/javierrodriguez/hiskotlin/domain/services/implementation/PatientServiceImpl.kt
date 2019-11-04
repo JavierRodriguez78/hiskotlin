@@ -8,9 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired
 
 @Service
 class PatientServiceImpl  : IPatientService {
-
     @Autowired
     private lateinit var  patientDao: IPatientDao
+
+
+    override fun addPatient(patient: Patient):Patient = patientDao.save(patient)
+
+
 
     override fun getPatients(): List<Patient> = patientDao.findAll() as List<Patient>
 
