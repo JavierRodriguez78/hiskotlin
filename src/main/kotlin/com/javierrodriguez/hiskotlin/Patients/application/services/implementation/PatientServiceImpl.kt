@@ -1,9 +1,9 @@
-package com.javierrodriguez.hiskotlin.domain.services.implementation
+package com.javierrodriguez.hiskotlin.Patients.application.services.implementation
 
-import com.javierrodriguez.hiskotlin.domain.dao.IPatientDao
-import com.javierrodriguez.hiskotlin.domain.entities.Patient
+import com.javierrodriguez.hiskotlin.Patients.domain.dao.IPatientDao
+import com.javierrodriguez.hiskotlin.Patients.domain.entities.Patient
 import org.springframework.stereotype.Service
-import com.javierrodriguez.hiskotlin.domain.services.IPatientService
+import com.javierrodriguez.hiskotlin.Patients.application.services.IPatientService
 import org.apache.juli.logging.LogFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.annotation.Transactional

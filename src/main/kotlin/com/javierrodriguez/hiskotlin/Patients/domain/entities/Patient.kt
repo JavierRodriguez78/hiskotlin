@@ -1,7 +1,6 @@
-package com.javierrodriguez.hiskotlin.domain.entities
+package com.javierrodriguez.hiskotlin.Patients.domain.entities
 
 import com.sun.istack.NotNull
-import org.springframework.format.annotation.DateTimeFormat
 import java.time.LocalDateTime
 import javax.persistence.*
 
