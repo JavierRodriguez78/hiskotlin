@@ -41,4 +41,11 @@ class PatientController {
         val result:Optional<Patient> = patientService.getPatientByID(id)
         return ResponseEntity(result, HttpStatus.OK)
     }
+    @GetMapping("patients/sip/{sip}")
+    fun getPatientBySip(@PathVariable sip:Long):ResponseEntity<Optional<Patient>>
+    {
+        Logger.warn("Captura" + sip)
+        val result:Optional<Patient> = patientService.getPatientBySip(sip)
+        return ResponseEntity(result, HttpStatus.OK)
+    }
 }

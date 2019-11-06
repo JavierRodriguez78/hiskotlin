@@ -7,4 +7,5 @@ interface IPatientService {
     fun getPatients():List<Patient>
     fun addPatient(patient:Patient):Patient
     fun getPatientByID(id:Int): Optional<Patient>
+    fun getPatientBySip(sip:Long): Optional<Patient>
 }
