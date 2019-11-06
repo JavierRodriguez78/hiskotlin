@@ -2,15 +2,12 @@ package com.javierrodriguez.hiskotlin.controllers
 
 import com.javierrodriguez.hiskotlin.domain.entities.Patient
 import com.javierrodriguez.hiskotlin.domain.services.IPatientService
-import org.apache.juli.logging.Log
 import org.apache.juli.logging.LogFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import org.springframework.web.bind.annotation.RequestMethod.GET
 import java.util.*
-import java.util.logging.Logger
 
 @RestController
 @RequestMapping("api/v1")
@@ -47,5 +44,14 @@ class PatientController {
         Logger.warn("Captura" + sip)
         val result:Optional<Patient> = patientService.getPatientBySip(sip)
         return ResponseEntity(result, HttpStatus.OK)
+    }
+
+    @DeleteMapping("patients/sip/{sip}")
+    fun deletePatientBySip(@PathVariable sip:Long):ResponseEntity<Boolean>
+    {
+        Logger.warn("Borrado ->"+ sip)
+        val result:Boolean = patientService.deletePatientBySip(sip)
+       if (result) return ResponseEntity(result, HttpStatus.OK)
+        return ResponseEntity(false, HttpStatus.NOT_FOUND)
     }
 }

@@ -6,4 +6,5 @@ import java.util.*
 
 interface IPatientDao: CrudRepository<Patient, Int> {
     public fun findBySip(sip:Long): Optional<Patient>
+    public fun deleteBySip(sip:Long):Int
 }
