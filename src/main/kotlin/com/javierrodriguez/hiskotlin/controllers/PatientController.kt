@@ -27,8 +27,11 @@ class PatientController {
 
     @PostMapping("patients")
     fun addPatient(@RequestBody patient:Patient):ResponseEntity<Patient>{
-       val result:Patient = patientService.addPatient(patient)
-        return ResponseEntity(result, HttpStatus.OK)
+       val result: Patient = patientService.addPatient(patient)
+          return when(result) {
+              null ->  ResponseEntity(result, HttpStatus.BAD_REQUEST)
+              else -> ResponseEntity(result, HttpStatus.CREATED)
+        }
     }
 
     @GetMapping("patients/{id}")
