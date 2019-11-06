@@ -37,16 +37,17 @@ class PatientController {
         Logger.warn("Captura" + id)
         val result: Optional<Patient> = patientService.getPatientByID(id)
 
-        return result.map {res-> ResponseEntity<Patient>(res, HttpStatus.OK)}
-                .orElse(ResponseEntity<Patient>(HttpStatus.NO_CONTENT))
-              //return ResponseEntity(result, HttpStatus.OK)
+        return result.map {res-> ResponseEntity(res, HttpStatus.OK)}
+                .orElse(ResponseEntity(HttpStatus.NO_CONTENT))
+
     }
     @GetMapping("patients/sip/{sip}")
-    fun getPatientBySip(@PathVariable sip:Long):ResponseEntity<Optional<Patient>>
+    fun getPatientBySip(@PathVariable sip:Long):ResponseEntity<Patient>
     {
         Logger.warn("Captura" + sip)
         val result:Optional<Patient> = patientService.getPatientBySip(sip)
-        return ResponseEntity(result, HttpStatus.OK)
+        return result.map { res-> ResponseEntity(res, HttpStatus.OK)}
+                .orElse(ResponseEntity(HttpStatus.NO_CONTENT))
     }
 
     @DeleteMapping("patients/sip/{sip}")
