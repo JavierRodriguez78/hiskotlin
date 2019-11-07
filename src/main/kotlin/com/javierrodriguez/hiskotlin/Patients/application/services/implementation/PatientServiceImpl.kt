@@ -4,9 +4,12 @@ import com.javierrodriguez.hiskotlin.Patients.domain.dao.IPatientDao
 import com.javierrodriguez.hiskotlin.Patients.domain.entities.Patient
 import org.springframework.stereotype.Service
 import com.javierrodriguez.hiskotlin.Patients.application.services.IPatientService
+import com.javierrodriguez.hiskotlin.doctors.domain.entities.Doctor
 import org.apache.juli.logging.LogFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.annotation.Transactional
+import java.time.LocalDate
+import java.time.LocalDateTime
 import java.util.*
 
 @Service
@@ -17,7 +20,21 @@ class PatientServiceImpl  : IPatientService {
 
     private var Logger = LogFactory.getLog("PatientServiceImpl.class")
 
-    override fun addPatient(patient: Patient):Patient = patientDao.save(patient)
+    override fun addPatient(patient: Patient):Patient
+    {
+        Logger.warn(patient)
+        var doctor:Doctor= Doctor(0,
+                232323,
+                " ",
+                " ",
+                 "",
+                LocalDateTime.now(),
+                LocalDateTime.now()
+                )
+
+        patient.doctor= doctor
+
+        return patientDao.save(patient)}
 
 
     @Transactional(readOnly=true)

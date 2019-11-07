@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 import java.util.*
 
 @RestController
-@RequestMapping("api/v1/patient")
+@RequestMapping("api/v1/patients")
 class PatientController {
     private var Logger = LogFactory.getLog("PatientController.class")
 
@@ -22,10 +22,10 @@ class PatientController {
      return ResponseEntity<Unit>(HttpStatus.OK);
     }
 
-    @RequestMapping("patients","GET","application/json")
+    @RequestMapping("/","GET","application/json")
     fun getPatients():ResponseEntity<List<Patient>> = ResponseEntity(patientService.getPatients(), HttpStatus.OK)
 
-    @PostMapping("patients")
+    @PostMapping("/")
     fun addPatient(@RequestBody patient:Patient):ResponseEntity<Patient>{
        val result: Patient = patientService.addPatient(patient)
           return when(result) {
@@ -34,7 +34,7 @@ class PatientController {
         }
     }
 
-    @GetMapping("patients/{id}")
+    @GetMapping("/{id}")
     fun getPatientByID(@PathVariable id:Int): ResponseEntity<Patient>
     {
         Logger.warn("Captura" + id)
@@ -44,7 +44,7 @@ class PatientController {
                 .orElse(ResponseEntity(HttpStatus.NO_CONTENT))
 
     }
-    @GetMapping("patients/sip/{sip}")
+    @GetMapping("/sip/{sip}")
     fun getPatientBySip(@PathVariable sip:Long):ResponseEntity<Patient>
     {
         Logger.warn("Captura" + sip)
@@ -53,7 +53,7 @@ class PatientController {
                 .orElse(ResponseEntity(HttpStatus.NO_CONTENT))
     }
 
-    @DeleteMapping("patients/sip/{sip}")
+    @DeleteMapping("/sip/{sip}")
     fun deletePatientBySip(@PathVariable sip:Long):ResponseEntity<Boolean>
     {
         Logger.warn("Borrado ->"+ sip)
