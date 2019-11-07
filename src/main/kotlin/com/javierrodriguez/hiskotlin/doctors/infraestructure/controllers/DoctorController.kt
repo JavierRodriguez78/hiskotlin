@@ -7,10 +7,7 @@ import org.apache.juli.logging.LogFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import java.util.*
 
 
@@ -31,6 +28,28 @@ class DoctorController {
         return ResponseEntity(result, HttpStatus.OK)
 
 
+    }
+    @GetMapping("/")
+    fun getDoctors(): ResponseEntity<List<Doctor>>
+    {
+
+         var result:List<Doctor> = doctorService.getDoctors();
+
+        return ResponseEntity(result, HttpStatus.OK)
+
+
+    }
+
+    @PostMapping("/")
+    fun addDoctor(@RequestBody doctor:Doctor):ResponseEntity<Unit>{
+        try {
+            Logger.warn("Doctor creado")
+            doctorService.addDoctor(doctor)
+            return ResponseEntity(HttpStatus.CREATED)
+        }catch(e:Exception){
+            Logger.error(e.message)
+            return ResponseEntity(HttpStatus.BAD_GATEWAY)
+        }
     }
 
 }

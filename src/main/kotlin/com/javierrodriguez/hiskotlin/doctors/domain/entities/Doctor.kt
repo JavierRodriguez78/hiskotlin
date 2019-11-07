@@ -2,17 +2,15 @@ package com.javierrodriguez.hiskotlin.doctors.domain.entities
 
 import com.sun.istack.NotNull
 import java.time.LocalDateTime
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name="doctors")
 data class Doctor(
         @Id
-        @GeneratedValue
+        @GeneratedValue(strategy = GenerationType.AUTO)
         var id: Int?,
+        @Column(unique=true)
         var collegiatenumber: Long?,
         var name: String?,
         var lastname: String?,

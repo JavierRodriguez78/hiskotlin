@@ -6,4 +6,6 @@ import com.javierrodriguez.hiskotlin.doctors.domain.entities.Doctor
 
 interface IDoctorService {
     fun getDoctorByID(id:Int): Doctor
+    fun getDoctors():List<Doctor>
+    fun addDoctor(doctor:Doctor)
 }

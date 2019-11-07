@@ -8,8 +8,12 @@ import org.springframework.stereotype.Service
 
 @Service
 class DoctorServiceImpl: IDoctorService {
+
+
     @Autowired
     private lateinit var doctorDao: IDoctorDao
     override fun getDoctorByID(id: Int): Doctor = doctorDao.getDoctorById(id)
+    override fun getDoctors():List<Doctor> = doctorDao.getDoctors()
+    override fun addDoctor(doctor:Doctor){doctorDao.addDoctor(doctor)}
 
 }
