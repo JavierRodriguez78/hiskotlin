@@ -1,4 +1,4 @@
-package com.javierrodriguez.hiskotlin.application.controllers
+package com.javierrodriguez.hiskotlin.application.infraestructure.controllers
 
 import com.javierrodriguez.hiskotlin.application.domain.dao.IUserDao
 import com.javierrodriguez.hiskotlin.application.domain.entities.User
