@@ -1,6 +1,6 @@
-package com.javierrodriguez.hiskotlin.Patients.application.services
+package com.javierrodriguez.hiskotlin.patients.application.services
 
-import com.javierrodriguez.hiskotlin.Patients.domain.entities.Patient
+import com.javierrodriguez.hiskotlin.patients.domain.entities.Patient
 import java.util.*
 
 interface IPatientService {

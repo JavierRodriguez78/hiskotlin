@@ -1,6 +1,5 @@
 package com.javierrodriguez.hiskotlin.doctors.infraestructure.controllers
 
-import com.javierrodriguez.hiskotlin.Patients.domain.entities.Patient
 import com.javierrodriguez.hiskotlin.doctors.application.services.IDoctorService
 import com.javierrodriguez.hiskotlin.doctors.domain.entities.Doctor
 import org.apache.juli.logging.LogFactory
@@ -8,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import java.util.*
 
 
 @RestController

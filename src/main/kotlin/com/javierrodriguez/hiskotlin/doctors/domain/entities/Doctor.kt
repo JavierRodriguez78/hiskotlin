@@ -1,7 +1,7 @@
 package com.javierrodriguez.hiskotlin.doctors.domain.entities
 
 import com.fasterxml.jackson.annotation.JsonManagedReference
-import com.javierrodriguez.hiskotlin.Patients.domain.entities.Patient
+import com.javierrodriguez.hiskotlin.patients.domain.entities.Patient
 import com.sun.istack.NotNull
 import java.time.LocalDateTime
 import javax.persistence.*

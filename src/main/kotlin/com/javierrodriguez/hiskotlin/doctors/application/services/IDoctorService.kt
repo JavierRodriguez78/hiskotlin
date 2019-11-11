@@ -1,6 +1,5 @@
 package com.javierrodriguez.hiskotlin.doctors.application.services
 
-import com.javierrodriguez.hiskotlin.Patients.domain.entities.Patient
 import com.javierrodriguez.hiskotlin.doctors.domain.entities.Doctor
 
 

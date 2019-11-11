@@ -1,4 +1,4 @@
-package com.javierrodriguez.hiskotlin.Patients.domain.entities
+package com.javierrodriguez.hiskotlin.patients.domain.entities
 
 import com.fasterxml.jackson.annotation.JsonBackReference
 import com.javierrodriguez.hiskotlin.doctors.domain.entities.Doctor

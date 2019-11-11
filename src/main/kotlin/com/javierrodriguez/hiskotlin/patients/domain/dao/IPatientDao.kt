@@ -1,9 +1,8 @@
-package com.javierrodriguez.hiskotlin.Patients.domain.dao
+package com.javierrodriguez.hiskotlin.patients.domain.dao
 
-import com.javierrodriguez.hiskotlin.Patients.domain.entities.Patient
+import com.javierrodriguez.hiskotlin.patients.domain.entities.Patient
 import org.springframework.data.jpa.repository.JpaRepository
 
-import org.springframework.data.repository.CrudRepository
 import java.util.*
 
 interface IPatientDao: JpaRepository<Patient, Int> {

@@ -1,7 +1,7 @@
-package com.javierrodriguez.hiskotlin.Patients.infraestructure.controllers
+package com.javierrodriguez.hiskotlin.patients.infraestructure.controllers
 
-import com.javierrodriguez.hiskotlin.Patients.domain.entities.Patient
-import com.javierrodriguez.hiskotlin.Patients.application.services.IPatientService
+import com.javierrodriguez.hiskotlin.patients.domain.entities.Patient
+import com.javierrodriguez.hiskotlin.patients.application.services.IPatientService
 import org.apache.juli.logging.LogFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus

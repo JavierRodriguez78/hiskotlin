@@ -1,15 +1,12 @@
-package com.javierrodriguez.hiskotlin.Patients.application.services.implementation
+package com.javierrodriguez.hiskotlin.patients.application.services.implementation
 
-import com.javierrodriguez.hiskotlin.Patients.domain.dao.IPatientDao
-import com.javierrodriguez.hiskotlin.Patients.domain.entities.Patient
+import com.javierrodriguez.hiskotlin.patients.domain.dao.IPatientDao
+import com.javierrodriguez.hiskotlin.patients.domain.entities.Patient
 import org.springframework.stereotype.Service
-import com.javierrodriguez.hiskotlin.Patients.application.services.IPatientService
-import com.javierrodriguez.hiskotlin.doctors.domain.entities.Doctor
+import com.javierrodriguez.hiskotlin.patients.application.services.IPatientService
 import org.apache.juli.logging.LogFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.transaction.annotation.Transactional
-import java.time.LocalDate
-import java.time.LocalDateTime
 import java.util.*
 
 @Service
