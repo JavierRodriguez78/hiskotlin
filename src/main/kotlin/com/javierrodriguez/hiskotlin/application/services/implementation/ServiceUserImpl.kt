@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.AuthorityUtils
 import org.springframework.security.core.authority.AuthorityUtils.commaSeparatedStringToAuthorityList
+import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 import java.util.*
 import java.util.stream.Collectors
