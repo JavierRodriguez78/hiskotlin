@@ -31,7 +31,7 @@ class HiskotlinApplication {
                     .cors()
                     .and()
                     .csrf().disable()
-                    .addFilterAfter(JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter::class.java)
+                     .addFilterAfter(JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter::class.java)
                     .authorizeRequests()
                     .antMatchers(HttpMethod.POST,"/api/v1/auth/").permitAll()
                     .anyRequest().authenticated()
