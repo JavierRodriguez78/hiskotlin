@@ -1,15 +1,17 @@
 package com.javierrodriguez.hiskotlin.Patients.domain.entities
 
+import com.fasterxml.jackson.annotation.JsonBackReference
 import com.javierrodriguez.hiskotlin.doctors.domain.entities.Doctor
 import com.sun.istack.NotNull
 import java.time.LocalDateTime
 import javax.persistence.*
 
+
 @Entity
 @Table(name="patients")
 data class Patient(
         @Id
-        @GeneratedValue
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         var id: Int?,
         var sip: Long?,
         var name: String?,
@@ -17,7 +19,8 @@ data class Patient(
         @NotNull
         var created_at: LocalDateTime =LocalDateTime.now(),
         var update_at: LocalDateTime?,
-        @ManyToOne
-        @JoinColumn(name="doctor_id", nullable = true)
-        var doctor: Doctor?
+        @ManyToOne(cascade = arrayOf(CascadeType.ALL),fetch= FetchType.EAGER)
+        @JoinColumn(name="doctor_id")
+        @JsonBackReference
+        var doctor: Doctor?=null
         )

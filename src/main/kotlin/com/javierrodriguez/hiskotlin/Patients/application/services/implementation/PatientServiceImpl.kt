@@ -23,22 +23,11 @@ class PatientServiceImpl  : IPatientService {
     override fun addPatient(patient: Patient):Patient
     {
         Logger.warn(patient)
-        var doctor:Doctor= Doctor(0,
-                232323,
-                " ",
-                " ",
-                 "",
-                LocalDateTime.now(),
-                LocalDateTime.now()
-                )
-
-        patient.doctor= doctor
-
         return patientDao.save(patient)}
 
 
     @Transactional(readOnly=true)
-    override fun getPatients(): List<Patient> = patientDao.findAll() as List<Patient>
+    override fun getPatients(): List<Patient> = patientDao.findAll()
 
     override fun getPatientByID(id: Int): Optional<Patient>  = patientDao.findById(id)
 

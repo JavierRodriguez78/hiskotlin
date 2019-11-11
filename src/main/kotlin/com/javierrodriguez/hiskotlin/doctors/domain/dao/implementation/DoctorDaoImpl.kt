@@ -38,7 +38,12 @@ class DoctorDaoImpl: IDoctorDao {
 
     }
 
-    override fun addDoctor(doctor:Doctor) {entityManager.persist(doctor)}
+    @Transactional
+    override fun addDoctor(doctor:Doctor) {
+        entityManager.persist(doctor)
+        entityManager.flush()
+
+    }
 
 
 }
