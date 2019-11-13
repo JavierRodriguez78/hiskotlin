@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.Primary
 import org.springframework.http.HttpMethod
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
@@ -23,6 +24,7 @@ class HiskotlinApplication {
 
     @EnableWebSecurity
     @Configuration
+
     class WebSecurityConfig:WebSecurityConfigurerAdapter()
     {
         override fun configure(httpSecurity:HttpSecurity){
