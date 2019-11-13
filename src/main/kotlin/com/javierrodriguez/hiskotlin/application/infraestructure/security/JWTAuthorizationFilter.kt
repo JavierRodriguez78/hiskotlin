@@ -27,6 +27,7 @@ class JWTAuthorizationFilter:OncePerRequestFilter(){
 
         if(this.existJWT(request,response)){
             var claims:Claims = this.validateJWT(request)
+            Logger.warn(claims)
             if(claims.get("authorities")!=null){
                 this.setUpSpringAuthentication(claims)
             }else{
@@ -35,6 +36,8 @@ class JWTAuthorizationFilter:OncePerRequestFilter(){
 
         }
         filterChain.doFilter(request, response)
+        Logger.warn("He entrado por la puerta grande");
+
       }
 
 
@@ -59,6 +62,8 @@ class JWTAuthorizationFilter:OncePerRequestFilter(){
     {
         var authHeader:String = req.getHeader(HEADER)
         if(authHeader==null) return false
+        Logger.warn(authHeader.contains(PREFIX))
+       //S if(!authHeader.contains(PREFIX)) return false
         return true
     }
 }

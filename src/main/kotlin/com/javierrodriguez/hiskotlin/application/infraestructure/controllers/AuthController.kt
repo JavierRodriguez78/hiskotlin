@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest
 
 
 @RestController
-@RequestMapping("api/v1/auth")
 class AuthController {
     private var Logger = LogFactory.getLog("AuthController.class")
 
@@ -24,7 +23,7 @@ class AuthController {
     @Autowired
     lateinit var userDao: IUserDao
 
-   @PostMapping("/")
+   @PostMapping("/auth")
     fun login(@RequestBody user:User, request:HttpServletRequest): ResponseEntity<Any>
     {
         var result = userDao.findByUsername(user.username!!)

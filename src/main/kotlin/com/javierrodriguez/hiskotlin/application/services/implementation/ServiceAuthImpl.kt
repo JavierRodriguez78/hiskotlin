@@ -32,7 +32,7 @@ class ServiceAuthImpl() : IServiceAuth {
                         .map(GrantedAuthority::getAuthority)
                         .collect(Collectors.toList()))
                 .setIssuedAt(Date(System.currentTimeMillis()))
-                .setExpiration(Date(System.currentTimeMillis() + 600000))
+                .setExpiration(Date(System.currentTimeMillis() + 600000000))
                 .signWith(SignatureAlgorithm.HS512, "bragasdeesparto".toByteArray()).compact()
 
         return "Bearer "+ token

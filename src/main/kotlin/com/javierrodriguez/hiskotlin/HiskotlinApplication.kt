@@ -31,10 +31,14 @@ class HiskotlinApplication {
                     .cors()
                     .and()
                     .csrf().disable()
-                     .addFilterAfter(JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter::class.java)
-                    .authorizeRequests()
-                    .antMatchers(HttpMethod.POST,"/api/v1/auth/").permitAll()
+                    .antMatcher("/api/**").authorizeRequests()
                     .anyRequest().authenticated()
+                    .and()
+                    .addFilterBefore(JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter::class.java)
+                  /*  .authorizeRequests()
+                    .antMatchers(HttpMethod.POST,"/auth").anonymous()
+                    .antMatchers("/api/v1/patients/").permitAll()
+                    .anyRequest().authenticated()*/
 
         }
     }
