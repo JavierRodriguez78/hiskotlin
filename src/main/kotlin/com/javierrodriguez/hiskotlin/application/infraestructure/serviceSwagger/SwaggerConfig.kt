@@ -1,4 +1,4 @@
-package com.javierrodriguez.hiskotlin.application.serviceSwagger
+package com.javierrodriguez.hiskotlin.application.infraestructure.serviceSwagger
 
 
 
